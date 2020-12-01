@@ -1,0 +1,12 @@
+sudo: false
+language: node_js
+node_js: 
+- "12.18.3"
+env:
+  global:
+    - BUILD_TIMEOUT=10000
+install: npm install
+branches:
+  only:
+  - main
+script: npm run build
