@@ -1,6 +1,6 @@
 <script lang="ts">
   import { DetailProduct, Loading } from "../../components";
-  import storeProducts from "../../stores/stores";
+  import storeProducts from "../../stores/products";
   export let title: string = "";
   export const location: any = "";
 </script>
