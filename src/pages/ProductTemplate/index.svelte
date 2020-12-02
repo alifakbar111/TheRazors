@@ -1,5 +1,5 @@
 <script lang="ts">
-  import storeProducts from "../../stores/stores";
+  import storeProducts from "../../stores/products";
   import { Loading } from "../../components";
   import { addToCart } from "../../stores/cart";
   import { link } from "svelte-routing";
