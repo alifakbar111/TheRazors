@@ -4,6 +4,7 @@ import DetailProduct from "./DetailProduct/index.svelte";
 import Loading from "./Loading/index.svelte";
 import NavCartItem from "./NavCartItem/index.svelte";
 import CartItem from "./CartItem/index.svelte";
-import LoginLink from "./LoginLink/index.svelte"
+import LoginLink from "./LoginLink/index.svelte";
+import Alert from "./Alert/index.svelte";
 
-export { Navbar, Hero, DetailProduct, Loading, NavCartItem, CartItem, LoginLink }
+export { Navbar, Hero, DetailProduct, Loading, NavCartItem, CartItem, LoginLink, Alert }
