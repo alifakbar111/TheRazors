@@ -1,10 +1,13 @@
 <script lang="ts">
   import { CartItem } from "../../components";
-  import cart, { cartTotal } from "../../stores/cart";
+  import cart, { cartTotal, setStorageCart } from "../../stores/cart";
   import { link } from "svelte-routing";
   import globalStore from "../../stores/globalStore";
   import user from "../../stores/user";
-  // let user: boolean = true;
+  import { afterUpdate } from "svelte";
+  afterUpdate(() => {
+    setStorageCart($cart);
+  });
 </script>
 
 <section class="section">
