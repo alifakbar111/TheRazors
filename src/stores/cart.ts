@@ -1,7 +1,8 @@
 import { writable, derived } from "svelte/store";
 // import localCart from "../localCart";
 import { navigate } from "svelte-routing";
-import type { productItem } from "../types/item.type"
+import type { productItem } from "../types/item.type";
+import type { productCart } from "../types/productCart.type";
 
 const cart = writable(getStorageCart());
 
@@ -50,7 +51,7 @@ export const decreaseAmount = (id: number) => {
     return [...cart];
   });
 };
-export const addToCart = (id: number, product: any) => {
+export const addToCart = (id: number, product: productCart) => {
   cart.update(storeValue => {
     let item = storeValue.find((item: { id: number; }) => item.id === id);
     let cart: any[];
@@ -68,9 +69,11 @@ export const addToCart = (id: number, product: any) => {
 };
 // localStorage
 function getStorageCart() {
-  return localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
+  return localStorage.getItem("cartStorage")
+    ? JSON.parse(localStorage.getItem("cartStorage"))
+    : [];
 }
 export function setStorageCart(cartValues: any) {
-  localStorage.setItem("cart", JSON.stringify(cartValues));
+  localStorage.setItem("cartStorage", JSON.stringify(cartValues));
 }
 export default cart;
