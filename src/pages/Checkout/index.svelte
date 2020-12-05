@@ -1,1 +1,5 @@
-<h3 class="title is-3">Checkout Page</h3>
+<script lang="ts">
+  import { Checkout } from "../../containers";
+</script>
+
+<Checkout />

@@ -31,7 +31,7 @@
           <hr />
           {#if $user.jwt}
             <a
-              href="/checout"
+              href="/checkout"
               class="button is-primary is-fullwidth"
               on:click={() => {
                 globalStore.toggleItem('cart', false);

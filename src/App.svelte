@@ -1,5 +1,13 @@
 <script lang="ts">
-  import { About, Home, Login, ProductTemplate, Products, Cart } from "./pages";
+  import {
+    About,
+    Home,
+    Login,
+    ProductTemplate,
+    Products,
+    Cart,
+    Checkout,
+  } from "./pages";
   import { Navbar, Alert } from "./components";
   import globalStore from "./stores/globalStore";
   import { Router, Route } from "svelte-routing";
@@ -17,4 +25,5 @@
   <Route path="/products" component={Products} />
   <Route path="/products/:id" component={ProductTemplate} />
   <Route path="/cart" component={Cart} />
+  <Route path="/checkout" component={Checkout} />
 </Router>
