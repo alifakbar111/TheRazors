@@ -19,8 +19,8 @@ async function setProducts() {
 // update
 function flattenProducts(data: ProductType[]) {
   return data.map(item => {
-    // let image: string = item.image.url;
-    let image = `${url}${item.image.url}`;
+    let image: string = item.image.url;
+    // let image = `${url}${item.image.url}`;
     return { ...item, image };
   })
 }
