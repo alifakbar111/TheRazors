@@ -1,0 +1,1 @@
+export default "https://the-razors-server.herokuapp.com"

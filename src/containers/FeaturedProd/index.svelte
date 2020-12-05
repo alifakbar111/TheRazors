@@ -1,6 +1,6 @@
 <script lang="ts">
   import { DetailProduct, Loading } from "../../components";
-  import { featuredStore } from "../../stores/stores";
+  import { featuredStore } from "../../stores/products";
   export let title: string = "";
 </script>
 

@@ -1,13 +1,17 @@
 <script lang="ts">
-  import user from "../../stores/user";
+  import userStorage from "../../stores/user";
+  import { logoutUser } from "../../stores/user";
   import { link } from "svelte-routing";
 </script>
 
-{#if $user.jwt}
+{#if $userStorage.jwt}
   <a
     href="/"
     style="text-decoration: none !important;"
     class="navbar-item has-text-black"
+    on:click={() => {
+      logoutUser();
+    }}
     use:link>Logout</a>
 {:else}
   <a

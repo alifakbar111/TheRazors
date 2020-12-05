@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { NavCartItem } from "../../components";
+  import NavCartItem from "../NavCartItem/index.svelte";
+  import LoginLink from "../LoginLink/index.svelte";
   import cart from "../../stores/cart";
-  import { link } from "svelte-routing";
   import links from "../../constants/links";
-  import { LoginLink } from "../../components";
-  
+  import { link } from "svelte-routing";
+
   let isOpen: boolean = false;
-  $: total = $cart.reduce((acc: number, curr: { amount: number; }) => {
+  $: total = $cart.reduce((acc: number, curr: { amount: number }) => {
     return (acc += curr.amount);
   }, 0);
   function toggleNav() {
@@ -45,7 +45,10 @@
       {/each}
       {#if $cart.length === 0}
         <div class="navbar-item is-hoverable">
-          <a class="navbar-link is-arrowless has-text-dark" href="/cart" use:link>
+          <a
+            class="navbar-link is-arrowless has-text-dark"
+            href="/cart"
+            use:link>
             <span class="icon is-small">
               <i class="fas fa-shopping-cart" />
             </span>
@@ -70,14 +73,6 @@
       {/if}
     </div>
     <div class="navbar-end">
-      <!-- <a
-        style="text-decoration: none !important;"
-        class="navbar-item"
-        href="/login"
-        on:click={toggleNav}
-        use:link>
-        Login
-      </a> -->
       <LoginLink />
     </div>
   </div>
